@@ -35,20 +35,39 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
 
     @IBOutlet weak var tableViewOutlet: UITableView!
+    var productArray = [Product]()
     
     var products = [Product]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableViewOutlet.dataSource = self
+        tableViewOutlet.delegate = self
+        
         // Do any additional setup after loading the view.
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
         
         let p1 = Product(productName: "MacBookAir", productCategory: "Laptop")
         products.append(p1)
+        productArray.append(p1)
         
         let p2 = Product(productName: "iPhone", productCategory: "cellPhone")
         products.append(p2)
+        productArray.append(p2)
+        
+        let p3 = Product(productName: "Samsung TV", productCategory: "TV")
+        products.append(p3)
+        productArray.append(p3)
+        
+        let p4 = Product(productName: "LG TV", productCategory: "TV")
+        products.append(p4)
+        productArray.append(p4)
+        
+        let p5 = Product(productName: "Sony TV", productCategory: "TV")
+        products.append(p5)
+        productArray.append(p5)
         
     }
     
